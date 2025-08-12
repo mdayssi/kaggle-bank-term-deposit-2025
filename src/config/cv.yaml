@@ -1,0 +1,4 @@
+cv:
+  n_splits: 5
+  shuffle: true
+  random_state: 42

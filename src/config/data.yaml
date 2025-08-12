@@ -1,0 +1,6 @@
+data:
+  train_path: data/raw/train.csv
+  test_path: data/raw/test.csv
+  sample_submission_path: data/raw/sample_submission.csv
+  target: y
+  id_col: id
