@@ -1,0 +1,50 @@
+library: catboost
+version: 1.2.8
+planned_params:
+  iterations: 5000
+  learning_rate: 0.05
+  depth: 6
+  loss_function: Logloss
+  bagging_temperature: 0.5
+  random_strength: 0.5
+  l2_leaf_reg: 5
+  rsm: 0.8
+  eval_metric: AUC
+  od_type: Iter
+  od_wait: 200
+  auto_class_weights: Balanced
+  verbose: 0
+  random_state: 42
+fit_params:
+  use_best_model: true
+  early_stopping_rounds: 200
+  verbose: 0
+best_iteration: 4998
+tree_count: 4999
+feature_order:
+- age
+- job
+- marital
+- education
+- default
+- balance
+- housing
+- loan
+- contact
+- day
+- month
+- duration
+- campaign
+- pdays
+- previous
+- poutcome
+categorical_features:
+- job
+- marital
+- education
+- default
+- housing
+- loan
+- contact
+- month
+- poutcome

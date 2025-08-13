@@ -1,0 +1,10 @@
+cat_boost_baseline:
+  model_path: "models/cat_boost_baseline.cbm"
+  logs_path: "experiments/logs/catboost_info_baseline"
+  params_path: "experiments/cb_baseline/cb_baseline.params.yml"
+  meta_path: "experiments/cb_baseline/cb_baseline.meta.yml"
+  preds_path: "experiments/cb_baseline/val_pred.parquet"
+  metrics_path: "experiments/cb_baseline/metrics.yml"
+
+
+
