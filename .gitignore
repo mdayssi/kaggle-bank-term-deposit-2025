@@ -213,3 +213,10 @@ indexes/
 .cache/
 .DS_Store
 data/processed/
+.env
+.idea/
+.virtual_documents/
+.ipynb_checkpoints/
+environment.banc_auc.yml
+requirements-pip.txt
+notebooks/base.ipynb
