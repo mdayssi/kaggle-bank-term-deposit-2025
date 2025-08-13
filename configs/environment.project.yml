@@ -27,6 +27,8 @@ dependencies:
   - ruff
   - nbstripout
   - pre-commit
+  - pandas-stubs=2.2.3.250308
+  - pyarrow
   - pip:
       - catboost==1.2.8
       - shap==0.48.0
@@ -34,3 +36,4 @@ dependencies:
       - gower==0.1.2
       - jupyterlab-code-formatter==3.0.2
       - pyright==1.1.394
+      - python-dotenv==1.1.1
