@@ -12,10 +12,12 @@ def get_features_names(df: pd.DataFrame) -> Dict[str, List[str]]:
 def cat_features_to_category(df: pd.DataFrame) -> pd.DataFrame:
     out_df = df.copy()
     object_columns = out_df.select_dtypes(include=['object']).columns.tolist()
-    out_df.loc[:, object_columns] = out_df.loc[:, object_columns].astype('category')
+    out_df[object_columns] = out_df[object_columns].astype('category')
     return out_df
 
-def align_categorical_levels(df_train: pd.DataFrame, df_val: pd.DataFrame, cat_features: List[str]) -> Tuple[pd.DataFrame, pd.DataFrame]:
+
+def align_categorical_levels(df_train: pd.DataFrame, df_val: pd.DataFrame, cat_features: List[str]) -> Tuple[
+    pd.DataFrame, pd.DataFrame]:
     train = df_train.copy()
     val = df_val.copy()
     for col in cat_features:
@@ -23,9 +25,3 @@ def align_categorical_levels(df_train: pd.DataFrame, df_val: pd.DataFrame, cat_f
         train[col] = train[col].cat.set_categories(levels)
         val[col] = val[col].cat.set_categories(levels)
     return train, val
-
-
-
-
-
-

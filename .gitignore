@@ -220,3 +220,4 @@ data/processed/
 environment.banc_auc.yml
 requirements-pip.txt
 notebooks/base.ipynb
+experiments/logs

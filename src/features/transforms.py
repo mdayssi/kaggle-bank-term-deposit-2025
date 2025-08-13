@@ -4,7 +4,6 @@ import pandas as pd
 from typing import List
 
 
-
 class JobBalanceEnc(BaseEstimator, TransformerMixin):
     def __init__(self, smoothing=10):
         self.smoothing_ = smoothing
