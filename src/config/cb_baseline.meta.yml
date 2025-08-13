@@ -1,7 +1,0 @@
-params:
-  iterations=1000
-  learning_rate=0.05
-  depth=6
-  auto_class_weights="Balanced"
-  verbose=0
-  random_state=42

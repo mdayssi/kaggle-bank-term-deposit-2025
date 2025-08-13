@@ -1,4 +1,0 @@
-model:
-  name: <to_be_filled>         # lightgbm | xgboost | catboost
-  params: {}
-  early_stopping_rounds: 200
