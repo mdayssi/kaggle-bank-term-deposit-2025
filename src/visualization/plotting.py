@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-from typing import List
+import numpy as np
+import shap
+from typing import List, Any
 
 plt.rcParams.update(
     {
@@ -52,6 +54,7 @@ def plotting_boxplot_numerical_features(data: pd.DataFrame, num_features: List[s
     plt.suptitle(f"Box-plot of numerical features")
     plt.tight_layout()
     plt.show()
+
 
 def plotting_countplot_categorical_features(data: pd.DataFrame, cat_features: List[str], color="#F4A460"):
     data = data[cat_features]
@@ -107,8 +110,8 @@ def plotting_kde_per_target(data: pd.DataFrame, target: pd.Series, num_features:
     fig, axs = plt.subplots(nrows=nrows, ncols=ncols, figsize=(12, 20))
     axs = axs.flatten()
     for i, feature in enumerate(num_features):
-        sns.kdeplot(data=data[target==0], x=feature, label='y=0', fill=True, alpha=0.4, ax=axs[i])
-        sns.kdeplot(data=data[target==1], x=feature, label='y=1', fill=True, alpha=0.4, ax=axs[i])
+        sns.kdeplot(data=data[target == 0], x=feature, label='y=0', fill=True, alpha=0.4, ax=axs[i])
+        sns.kdeplot(data=data[target == 1], x=feature, label='y=1', fill=True, alpha=0.4, ax=axs[i])
         axs[i].set_title(f"{feature}")
         axs[i].legend()
         axs[i].set_xlabel("")
@@ -117,3 +120,20 @@ def plotting_kde_per_target(data: pd.DataFrame, target: pd.Series, num_features:
     plt.suptitle(f"KDE numeric features per classes")
     plt.tight_layout()
     plt.show()
+
+
+def shap_values(model: Any, df: pd.DataFrame) -> pd.DataFrame:
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer.shap_values(df)
+    shap.summary_plot(shap_values, df, plot_type="bar")
+
+    mean_shap_values = np.abs(shap_values).mean(axis=0)
+
+    df_imp = pd.DataFrame(
+        {
+            "feature": df.columns,
+            "shap_value": mean_shap_values,
+        }
+    ).sort_values("shap_value", ascending=False)
+
+    return df_imp
