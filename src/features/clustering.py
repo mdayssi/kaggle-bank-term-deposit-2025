@@ -67,7 +67,7 @@ def fit_final_kproto(df_train, df_val, num_cols, cat_cols, K, gamma, seed=42):
     kp = KPrototypes(
         n_clusters=K, gamma=gamma,
         init='Huang', n_init=5, max_iter=100,
-        random_state=seed, verbose=1
+        random_state=seed, verbose=0
     )
     labels_tr = kp.fit_predict(Xtr, categorical=cat_idx)
     labels_va = kp.predict(Xva, categorical=cat_idx)

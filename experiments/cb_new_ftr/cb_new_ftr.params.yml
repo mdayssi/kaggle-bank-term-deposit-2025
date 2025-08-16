@@ -1,0 +1,20 @@
+name: cb_baseline_model
+params:
+  iterations: 5000
+  learning_rate: 0.05
+  depth: 6
+  loss_function: "Logloss"
+  bagging_temperature: 0.5
+  random_strength: 0.5
+  l2_leaf_reg: 5
+  rsm: 0.8
+  eval_metric: "AUC"
+  od_type: "Iter"
+  od_wait: 200
+  auto_class_weights: "Balanced"
+  verbose: 0
+  random_state: 42
+fit:
+  use_best_model: True
+  early_stopping_rounds: 200
+  verbose: 0

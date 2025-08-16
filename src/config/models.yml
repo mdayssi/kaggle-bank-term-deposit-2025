@@ -1,10 +1,31 @@
 cat_boost_baseline:
-  model_path: "models/cat_boost_baseline.cbm"
-  logs_path: "experiments/logs/catboost_info_baseline"
-  params_path: "experiments/cb_baseline/cb_baseline.params.yml"
-  meta_path: "experiments/cb_baseline/cb_baseline.meta.yml"
-  preds_path: "experiments/cb_baseline/val_pred.parquet"
-  metrics_path: "experiments/cb_baseline/metrics.yml"
+  model_path: models/cat_boost_baseline.cbm
+  logs_path: experiments/logs/catboost_info_baseline
+  params_path: experiments/cb_baseline/cb_baseline.params.yml
+  meta_path: experiments/cb_baseline/cb_baseline.meta.yml
+  preds_path: experiments/cb_baseline/val_pred.parquet
+  metrics_path: experiments/cb_baseline/metrics.yml
 
+catboost_new_ftr:
+  model_path: models/catboost_new_ftr.cbm
+  logs_path: experiments/logs/caboost_new_ftr
+  params_path: experiments/cb_new_ftr/cb_new_ftr.params.yml
+  meta_path: experiments/cb_new_ftr/cb_new_ftr.meta.yml
+  preds_path: experiments/cb_new_ftr/val_pred.parquet
+  metrics_path: experiments/cb_new_ftr/metrics.yml
 
+catboost_searh:
+  model_path: models/catboost_best_params.cbm
+  logs_path: experiments/logs/caboost_search
+  params_path: experiments/cb_search_best_params/cb_search_base.param.yml
+  meta_path: experiments/cb_search_best_params/cb_search_base.meta.yml
+  preds_path: experiments/cb_search_best_params/val_pred.parquet
+  metrics_path: experiments/cb_search_best_params/metrics.yml
 
+lgbm_searh:
+  model_path: models/lgbm_best_params.txt
+  logs_path: experiments/logs/lgbm_search
+  params_path: experiments/lgbm_search_best_params/lgbm_search_base.param.yml
+  meta_path: experiments/lgbm_search_best_params/lgbm_search.meta.yml
+  preds_path: experiments/lgbm_search_best_params/val_pred.parquet
+  metrics_path: experiments/lgbm_search_best_params/metrics.yml

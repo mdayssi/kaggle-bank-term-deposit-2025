@@ -1,4 +1,21 @@
-data:
+data_raw:
   train_path: data/raw/train.csv
   test_path: data/raw/test.csv
   sample_submission_path: data/raw/sample_submission.csv
+
+origin_train_data_clean:
+  features_path: data/processed/clean_data_features.parquet
+  target_path: data/processed/clean_target.parquet
+  ids_path: data/processed/clean_data_ids.parquet
+
+split_origin_train_data:
+  train_features_path: data/processed/train_data_origin_features.parquet
+  val_features_path: data/processed/validate_data_origin_features.parquet
+  train_target_path: data/processed/train_target_origin.parquet
+  val_target_path: data/processed/validate_target_origin.parquet
+
+new_features_train_data:
+  train_new_features_path: data/processed/train_data_new_features.parquet
+  val_new_features_path: data/processed/validate_data_new_features.parquet
+  train_target_path: data/processed/train_target_origin.parquet
+  val_target_path: data/processed/validate_target_origin.parquet

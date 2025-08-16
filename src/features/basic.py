@@ -4,14 +4,14 @@ import numpy as np
 
 
 def get_features_names(df: pd.DataFrame) -> Dict[str, List[str]]:
-    cat_features = df.select_dtypes(include=['object', 'category']).columns.tolist()
+    cat_features = df.select_dtypes(include=['object', 'category', 'string']).columns.tolist()
     num_features = df.select_dtypes(include=[np.number]).columns.tolist()
     return {'categorical': cat_features, 'numeric': num_features}
 
 
 def cat_features_to_category(df: pd.DataFrame) -> pd.DataFrame:
     out_df = df.copy()
-    object_columns = out_df.select_dtypes(include=['object']).columns.tolist()
+    object_columns = out_df.select_dtypes(include=['object', 'string']).columns.tolist()
     out_df[object_columns] = out_df[object_columns].astype('category')
     return out_df
 

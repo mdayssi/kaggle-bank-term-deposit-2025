@@ -1,0 +1,115 @@
+library: catboost
+version: 1.2.8
+base_params:
+  loss_function: Logloss
+  eval_metric: AUC
+  iterations: 6000
+  od_type: Iter
+  od_wait: 200
+  auto_class_weights: Balanced
+  thread_count: -1
+  random_seed: 42
+  verbose: 0
+  allow_writing_files: false
+randomized_search_params:
+  param_distributions:
+    bagging_temperature:
+    - 0.0
+    - 0.5
+    - 0.1
+    random_strength:
+    - 0.0
+    - 0.5
+    - 1.0
+    learning_rate:
+    - 0.02
+    - 0.03
+    - 0.04
+    - 0.05
+    - 0.06
+    depth:
+    - 5
+    - 6
+    - 7
+    - 8
+    rsm:
+    - 0.8
+    - 0.9
+    - 1.0
+    l2_leaf_reg:
+    - 2
+    - 3
+    - 5
+    - 7
+    - 10
+    - 15
+    - 20
+    min_data_in_leaf:
+    - 1
+    - 10
+    - 20
+    - 50
+    - 100
+  n_iter: 24
+  cv: 3
+  stratified: true
+  shuffle: true
+  partition_random_seed: 42
+  calc_cv_statistics: true
+  refit: true
+  verbose: true
+best_search_params:
+  rsm: 0.9
+  random_strength: 0.5
+  allow_writing_files: false
+  eval_metric: AUC
+  od_wait: 200
+  od_type: Iter
+  verbose: 0
+  iterations: 6000
+  bagging_temperature: 0.5
+  auto_class_weights: Balanced
+  loss_function: Logloss
+  l2_leaf_reg: 3
+  depth: 6
+  min_data_in_leaf: 20
+  learning_rate: 0.05
+  random_seed: 42
+best_iteration: 5979
+tree_count: 5980
+feature_order:
+- age
+- job
+- marital
+- education
+- contact
+- poutcome
+- was_contact
+- credit_score
+- job_marital
+- job_education
+- education_marital
+- campaign_cat
+- pdays_cat
+- previous_cat
+- log_duration
+- log_balance
+- multiply_logs
+- is_overdraft
+- sin_month
+- cos_month
+- sin_day
+- cos_day
+- jb_mean
+categorical_features:
+- job
+- marital
+- education
+- contact
+- poutcome
+- job_marital
+- job_education
+- education_marital
+- campaign_cat
+- pdays_cat
+- previous_cat
