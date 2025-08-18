@@ -3,6 +3,16 @@ data_raw:
   test_path: data/raw/test.csv
   sample_submission_path: data/raw/sample_submission.csv
 
+data_full:
+  train_path: data/original_dataset/train.csv
+  test_path: data/raw/test.csv
+  sample_submission_path: data/raw/sample_submission.csv
+
+new_features_data_full:
+  data_new_features_path: data/processed/full_dataset/train_data_new_features.parquet
+  target_path: data/processed/full_dataset/clean_target.parquet
+
+
 origin_train_data_clean:
   features_path: data/processed/clean_data_features.parquet
   target_path: data/processed/clean_target.parquet

@@ -29,3 +29,11 @@ lgbm_searh:
   meta_path: experiments/lgbm_search_best_params/lgbm_search.meta.yml
   preds_path: experiments/lgbm_search_best_params/val_pred.parquet
   metrics_path: experiments/lgbm_search_best_params/metrics.yml
+
+xgboost_searh:
+  model_path: models/xgboost_best_params.json
+  logs_path: experiments/logs/xgboost_search
+  params_path: experiments/xgboost_search_best_params/xgboost_search_base.param.yml
+  meta_path: experiments/xgboost_search_best_params/xgboost_search.meta.yml
+  preds_path: experiments/xgboost_search_best_params/val_pred.parquet
+  metrics_path: experiments/xgboost_search_best_params/metrics.yml

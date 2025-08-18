@@ -1,4 +1,4 @@
-name: cb_baseline_model
+name: lgbm_base_model
 params:
   objective: 'binary'
   metric: 'auc'

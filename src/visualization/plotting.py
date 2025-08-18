@@ -3,6 +3,7 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 import shap
+import xgboost as xgb
 from typing import List, Any
 
 plt.rcParams.update(
@@ -122,9 +123,11 @@ def plotting_kde_per_target(data: pd.DataFrame, target: pd.Series, num_features:
     plt.show()
 
 
-def shap_values(model: Any, df: pd.DataFrame) -> pd.DataFrame:
+def shap_values(model: Any, df: pd.DataFrame, is_xgb=False) -> pd.DataFrame:
+    if is_xgb:
+        df_dmatrix = xgb.DMatrix(df, enable_categorical=True)
     explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(df)
+    shap_values = explainer.shap_values(df_dmatrix)
     shap.summary_plot(shap_values, df, plot_type="bar")
 
     mean_shap_values = np.abs(shap_values).mean(axis=0)

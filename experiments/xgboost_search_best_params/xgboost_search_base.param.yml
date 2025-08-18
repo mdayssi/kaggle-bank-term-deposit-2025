@@ -1,0 +1,10 @@
+name: xgb_base_model
+params:
+  objective: "binary:logistic"
+  eval_metric: auc
+  tree_method: hist
+  enable_categorical: True
+  random_state: 42
+randomized:
+  n_iter: 30
+  cv: 5
