@@ -37,3 +37,12 @@ xgboost_searh:
   meta_path: experiments/xgboost_search_best_params/xgboost_search.meta.yml
   preds_path: experiments/xgboost_search_best_params/val_pred.parquet
   metrics_path: experiments/xgboost_search_best_params/metrics.yml
+
+log_reg_meta:
+  scoring: roc_auc
+  penalty: l2
+  solver: lbfgs
+  max_iter: 2000
+  fit_intercept: True
+  n_jobs: -1
+  refit: True

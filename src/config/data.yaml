@@ -18,6 +18,11 @@ origin_train_data_clean:
   target_path: data/processed/clean_target.parquet
   ids_path: data/processed/clean_data_ids.parquet
 
+syn_train_data_clean:
+  data_path: data/processed/clean_data_features.parquet
+  target_path: data/processed/clean_target.parquet
+  ids_path: data/processed/clean_data_ids.parquet
+
 split_origin_train_data:
   train_features_path: data/processed/train_data_origin_features.parquet
   val_features_path: data/processed/validate_data_origin_features.parquet
@@ -29,3 +34,17 @@ new_features_train_data:
   val_new_features_path: data/processed/validate_data_new_features.parquet
   train_target_path: data/processed/train_target_origin.parquet
   val_target_path: data/processed/validate_target_origin.parquet
+
+test_data:
+  test_raw: ata/raw/test.csv
+  test_ftr_new: data/processed/test_new_features.parquet
+  test_ids: data/processed/test_ids.parquet
+
+preds_for_meta:
+  preds_on_syn: data/processed/preds_on_syn.parquet
+  target_on_syn: data/processed/target_on_syn.parquet
+  preds_on_test: data/processed/preds_on_test.parquet
+  test_ids: data/processed/test_ids.parquet
+
+final:
+  sub_path: submissions/submission.csv
