@@ -206,18 +206,31 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-data/raw/
-models/
-indexes/
-*.ipynb_checkpoints/
-.cache/
+# OS/IDE
 .DS_Store
-data/processed/
-.env
 .idea/
+.vscode/
 .virtual_documents/
+
+# Jupyter
 .ipynb_checkpoints/
-environment.banc_auc.yml
-requirements-pip.txt
-notebooks/base.ipynb
-experiments/logs
+*.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+
+# Data (храним только .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Artifacts
+models/*
+!models/.gitkeep
+experiments/logs/
+.cache/
