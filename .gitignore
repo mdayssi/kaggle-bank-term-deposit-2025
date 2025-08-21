@@ -235,6 +235,6 @@ data/processed/*
 models/*
 !models/.gitkeep
 experiments/logs/
-experiments/stacking/
+experiments/stacking/*
 !experiments/stacking/.gitkeep
 .cache/
