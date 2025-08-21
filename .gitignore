@@ -226,6 +226,8 @@ __pycache__/
 # Data (храним только .gitkeep)
 data/raw/*
 !data/raw/.gitkeep
+data/original_dataset/*
+!data/original_dataset/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
 
@@ -233,4 +235,6 @@ data/processed/*
 models/*
 !models/.gitkeep
 experiments/logs/
+experiments/stacking/
+!experiments/stacking/.gitkeep
 .cache/
