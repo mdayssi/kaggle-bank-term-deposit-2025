@@ -6,7 +6,7 @@ The goal is to predict whether a client will subscribe to a term deposit.
 
 ---
 
-## 📌 Project Structure
+## Project Structure
 
 ```
 .
@@ -28,7 +28,7 @@ The goal is to predict whether a client will subscribe to a term deposit.
 
 ---
 
-## 📊 Data
+## Data
 
 The dataset is **not included** in this repository.  
 You need to download it directly from Kaggle:  
@@ -45,7 +45,7 @@ data/original_dataset/  # original [Bank Marketing Dataset](https://www.kaggle.c
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 ```bash
@@ -73,7 +73,7 @@ You can explore experiments in the `notebooks/` folder:
 
 ---
 
-## ⚙️ Experiments
+## Experiments
 
 All experiments are logged in the `experiments/` folder, including:
 - model parameters (`*.yml`)
@@ -82,7 +82,7 @@ All experiments are logged in the `experiments/` folder, including:
 
 ---
 
-## 🔬 Approach
+## Approach
 
 We followed an iterative process to improve the solution:
 
@@ -95,14 +95,14 @@ Detailed metrics for each experiment can be found in the `experiments/` folder.
 
 ---
 
-## 📈 Results
+## Results
 
 Best results are achieved with model stacking (CatBoost + LGBM + XGBoost).  
 Final submissions can be found in `submissions/`.
 
 ---
 
-## 📌 Notes
+## Notes
 
 - The repository does **not** contain competition data (per Kaggle rules).  
 - You must download it manually.  
@@ -110,7 +110,7 @@ Final submissions can be found in `submissions/`.
 
 ---
 
-## 👤 Author
+## Author
 
 Developed by Daria Morgalenko.  
 Feel free to open issues or contribute.
